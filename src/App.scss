@@ -1,0 +1,33 @@
+.App{
+  padding:23px 23px 0px 23px;
+  box-sizing: border-box;
+}
+
+section{
+  outline:1px solid black;
+}
+
+@media screen and (min-width:1001px) {
+  header{
+    position:fixed;
+    top:30px;
+    left:30px; 
+    width:35%;
+  }
+  section{
+    width:65%;
+    margin-left:35%;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  header{
+    position:relative;
+    top:auto;
+    left:auto;
+  }
+  section{
+    width:100%;
+    margin-top:20px;
+  }
+}
