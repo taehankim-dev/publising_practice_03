@@ -3,10 +3,6 @@
   box-sizing: border-box;
 }
 
-section{
-  outline:1px solid black;
-}
-
 @media screen and (min-width:1001px) {
   header{
     position:fixed;
@@ -16,6 +12,7 @@ section{
   }
   section{
     width:65%;
+    margin-top:20px;
     margin-left:35%;
   }
 }
