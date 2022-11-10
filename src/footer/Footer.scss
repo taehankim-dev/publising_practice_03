@@ -1,0 +1,114 @@
+.footer-container{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:50px;
+  background:white;
+  .footer-inner{
+    display: flex;
+    padding:15px 25px;
+    >div{
+      float:left;
+      height:100%;
+    }
+    .footer-menu-wrap{
+      display: flex;
+      margin:auto 0 0 0;
+      .footer-menu{
+        height:100%;
+        li{
+          float:left;
+          margin:0 5px;
+          text-align: center;
+          font-size:.9em;
+          button, a{
+            width:100%;
+            height:100%;
+            border:none;
+            background-color: inherit;
+            font-weight: bold;
+            cursor: pointer;
+          }
+        }
+        .footer-menu-language{
+          position:relative;
+          span{
+            &:last-child{
+              margin-left:5px;
+            }
+          }
+          .footer-menu-language-select-wrap{
+            position:absolute;
+            top:-70px;
+            left:0;
+            width:300px;
+            height:50px;
+            >ul{
+              float:left;
+              height:100%;
+              li{
+                height:50%;
+                line-height: 1.5;
+                text-align: left;
+              }
+            }
+            .language-select-text{
+              width:50%;
+              li{
+                width:100%;
+                font-weight: bold;
+              }
+            }
+            .language-select{
+              width:50%;  
+              li{
+                select{
+                  width:150px;
+                  color:#989898;
+                  border:none;
+                  border-bottom:1px solid #cecece;
+                  &:focus, &:active{
+                    // border:none;
+                    outline:none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer-copyright{
+      display: flex;
+      margin:auto 0 0 0;
+      p{
+        font-size:.6em;
+        font-weight: bold;
+        padding-left:5px;
+        color:#989898;
+        letter-spacing: -0.2px;
+        
+      }
+    }
+
+    .footer-link-wrap{
+      display: flex;
+      margin:auto 0 auto auto;
+      .footer-link{
+        li{
+          float:left;
+          font-size:.9em;
+          color:#989898;
+          margin:0 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:767px) {
+  .footer-menu-wrap{
+    width:35%;
+  }
+}
