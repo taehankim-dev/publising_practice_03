@@ -33,6 +33,7 @@ function Footer(){
     setSelectLang(e.target.value.language)
   }
 
+  //ship location 선택
   const handleShipSelect = (e) => {
     setSelectShip(e.target.value.language)
   }

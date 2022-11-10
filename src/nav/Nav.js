@@ -4,15 +4,86 @@ import "./Nav.scss";
 import {Link} from 'react-router-dom';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faHouse, faShoppingBag, faBars} from '@fortawesome/free-solid-svg-icons'
+import {faHouse, faShoppingBag, faBars, faXmark} from '@fortawesome/free-solid-svg-icons'
 
 function Nav(){
-  const [shopCount, setShopCount] = useState(0);
+  const [shopCount] = useState(0);
+  const [toggleMenu, setToogleMenu] = useState(false);
+  const [toggleDestination, setToggleDestination] = useState(false);
+  const [selectLang, setSelectLang] = useState("English");
+  const [selectShip, setSelectShip] = useState("United States (US)");
 
   const [pageWidth, setPageWidth] = useState(document.body.offsetWidth);
+  const languageList = [
+    {idx : 1, language : "English"},
+    {idx : 2, language : "한국어"},
+  ]
 
+  const shipList = [
+    {idx : 1, country : 'United States (US)'},
+    {idx : 2, country : 'Korea'},
+    {idx : 3, country : 'Japan'},
+  ]
+
+  //Language 선택
+  const handleLangSelect = (e) => {
+    setSelectLang(e.target.value.language)
+  }
+
+  //ship location 선택
+  const handleShipSelect = (e) => {
+    setSelectShip(e.target.value.language)
+  }
+
+  //화면 사이즈 변화 감지
   const handleResize = () => {
     setPageWidth(document.body.offsetWidth);
+  }
+
+  const handleToogleMenu = () => {
+    const menu = document.getElementsByClassName('nav-inner-phone-menu-wrap')[0];
+
+    if(!toggleMenu) {
+      setToogleMenu(true);
+      menu.style.display = "block"
+      menu.classList.add("showMenu");
+      menu.classList.remove("closeMenu");
+    } else {
+      setToogleMenu(false);
+      menu.classList.add("closeMenu");
+      menu.classList.remove("showMenu");
+    }
+  }
+
+  //destination 클릭 시 height 조정
+  const handleToggleDestination = () => {
+    const menuWrap = document.getElementsByClassName('nav-inner-phone-menu-wrap')[0];
+
+    const destinationWrap = document.getElementsByClassName('nav-inner-phone-menu-destination-wrap')[0];
+    const destination = document.getElementsByClassName('nav-inner-phone-menu-destination')[0];
+    const menu = document.getElementsByClassName('nav-inner-phone-menu')[0];
+
+    if(!toggleDestination) {
+      setToggleDestination(true);
+      destinationWrap.classList.add("showDes");
+      destinationWrap.classList.remove("closeDes");
+      destination.classList.add("showDes");
+      destination.classList.remove("closeDes");
+
+      destinationWrap.style = "border-bottom:0;"
+      menu.style.height = "230px";
+      menuWrap.style = "height : 250px !important; display:block !important";
+    } else {
+      setToggleDestination(false);
+      destinationWrap.classList.add("closeDes");
+      destinationWrap.classList.remove("showDes");
+
+      destination.classList.remove("showDes");
+      destination.classList.add("closeDes");
+
+      menu.style.height = "160px";
+      menuWrap.style.height = "160px";
+    }
   }
 
   useEffect(()=>{
@@ -50,10 +121,40 @@ function Nav(){
                     <li>
                       <FontAwesomeIcon icon={faShoppingBag} />
                     </li>
-                    <li>
+                    <li onClick={handleToogleMenu}>
                       <FontAwesomeIcon icon={faBars} />
                     </li>
                   </ul>
+
+                  <div className="nav-inner-phone-menu-wrap closeMenu">
+                    <span onClick={handleToogleMenu}>
+                      <FontAwesomeIcon icon={faXmark} />
+                    </span>
+                    <ul className="nav-inner-phone-menu">
+                      <li className="nav-inner-phone-menu-destination-wrap">
+                        <ul className="nav-inner-phone-menu-destination">
+                          <li onClick={handleToggleDestination}>Destination</li>
+                          <li>
+                            <select onChange={handleLangSelect}>
+                              {languageList.map(e => (
+                                <option value={e.language} key ={e.idx}>{e.language}</option>
+                              ))}
+                            </select>
+                          </li>
+                          <li>
+                            <select onChange={handleShipSelect}>
+                              {shipList.map(e => (
+                                <option value={e.country} key ={e.idx}>{e.country}</option>
+                              ))}
+                            </select>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>Store</li>
+                      <li>News</li>
+                      <li>Help</li>
+                    </ul>
+                  </div>
                 </div>
               }
             </li>
