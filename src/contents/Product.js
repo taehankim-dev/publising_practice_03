@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {useLocation, Route, Routes} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 
 import "./Product.scss"
 
