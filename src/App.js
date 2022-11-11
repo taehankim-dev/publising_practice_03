@@ -27,7 +27,7 @@ function App() {
         <ContentsRouter />
       </section>
       {
-        pageWidth > 767 ?
+        pageWidth > 1000 ?
         <footer>
           <Footer />
         </footer>

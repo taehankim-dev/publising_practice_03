@@ -12,13 +12,15 @@ function Nav(){
   const [toggleDestination, setToggleDestination] = useState(false);
   const [selectLang, setSelectLang] = useState("English");
   const [selectShip, setSelectShip] = useState("United States (US)");
-
   const [pageWidth, setPageWidth] = useState(document.body.offsetWidth);
+
+  //언어리스트
   const languageList = [
     {idx : 1, language : "English"},
     {idx : 2, language : "한국어"},
   ]
 
+  //국가리스트
   const shipList = [
     {idx : 1, country : 'United States (US)'},
     {idx : 2, country : 'Korea'},
@@ -40,6 +42,7 @@ function Nav(){
     setPageWidth(document.body.offsetWidth);
   }
 
+  //phone menu effect
   const handleToogleMenu = () => {
     const menu = document.getElementsByClassName('nav-inner-phone-menu-wrap')[0];
 
@@ -159,27 +162,27 @@ function Nav(){
               }
             </li>
             <li className="nav-link">
-              <Link to="">
+              <Link to="/product/electronics" state={{info : "electronic"}}>
                 electronic
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="">
+              <Link to="/product/cases">
                 <div className="hidden-text case-line"></div>case
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="">
+              <Link to="/product/accessories">
                 <div className="hidden-text accessories-line"></div>accessories
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="">
+              <Link to="/product/all" state={{info : "all"}}>
                 <div className="hidden-text all-line"></div>all
               </Link>
             </li>
             <li>
-              <Link to="">
+              <Link to="/">
                 <button>ABOUT</button>
               </Link>
             </li>
