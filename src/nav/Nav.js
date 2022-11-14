@@ -167,12 +167,12 @@ function Nav(){
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/product/cases">
+              <Link to="/product/cases" state={{info : "case"}}>
                 <div className="hidden-text case-line"></div>case
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/product/accessories">
+              <Link to="/product/accessories" state={{info : "accessories"}}>
                 <div className="hidden-text accessories-line"></div>accessories
               </Link>
             </li>
