@@ -162,22 +162,22 @@ function Nav(){
               }
             </li>
             <li className="nav-link">
-              <Link to="/product/electronics" state={{info : "electronic"}}>
+              <Link to="/product/electronics/" state={{info : "electronics"}}>
                 electronic
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/product/cases" state={{info : "case"}}>
+              <Link to="/product/cases/" state={{info : "cases"}}>
                 <div className="hidden-text case-line"></div>case
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/product/accessories" state={{info : "accessories"}}>
+              <Link to="/product/accessories/" state={{info : "accessories"}}>
                 <div className="hidden-text accessories-line"></div>accessories
               </Link>
             </li>
             <li className="nav-link">
-              <Link to="/product/all" state={{info : "all"}}>
+              <Link to="/product/all/" state={{info : "all"}}>
                 <div className="hidden-text all-line"></div>all
               </Link>
             </li>
