@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/taehankim-dev.github.io/publising_practice_03/static/css/main.658836b9.css",
-    "main.js": "/taehankim-dev.github.io/publising_practice_03/static/js/main.9a613bec.js",
-    "index.html": "/taehankim-dev.github.io/publising_practice_03/index.html",
-    "main.658836b9.css.map": "/taehankim-dev.github.io/publising_practice_03/static/css/main.658836b9.css.map",
-    "main.9a613bec.js.map": "/taehankim-dev.github.io/publising_practice_03/static/js/main.9a613bec.js.map"
+    "main.css": "/publising_practice_03/static/css/main.658836b9.css",
+    "main.js": "/publising_practice_03/static/js/main.9a613bec.js",
+    "index.html": "/publising_practice_03/index.html",
+    "main.658836b9.css.map": "/publising_practice_03/static/css/main.658836b9.css.map",
+    "main.9a613bec.js.map": "/publising_practice_03/static/js/main.9a613bec.js.map"
   },
   "entrypoints": [
     "static/css/main.658836b9.css",
