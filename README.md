@@ -1,4 +1,5 @@
 # elevenpl.us 사이트 퍼블리싱 연습
+주소 : taehankim-dev.github.io/publising_practice_03
 
 ### 정상 작동 부분
 1. 왼쪽의 메뉴 부분
